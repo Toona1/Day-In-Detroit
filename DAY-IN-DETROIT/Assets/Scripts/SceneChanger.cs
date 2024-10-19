@@ -8,7 +8,7 @@ public class Scenes : MonoBehaviour
     //Runs when "play" button pressed
     public void PlayGame()
     {
-        SceneManager.LoadScene("Street");
+        SceneManager.LoadScene("GamePlay1");
     }
 
     //Runs when "try again" or "play again" buttons prssed

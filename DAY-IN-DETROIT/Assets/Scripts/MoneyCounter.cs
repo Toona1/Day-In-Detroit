@@ -1,37 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class MoneyCounter : MonoBehaviour
 {
-    public int money = 0; // Starting money value
-    public Text moneyText; // Reference to the UI Text
+    public static MoneyCounter instance; // Singleton instance
 
-    void Start()
+    private int totalCash; // Player's total cash
+    public TMP_Text cashText; // Reference to the UI text to display cash amount
+
+    private void Awake()
     {
-        UpdateMoneyText(); // Initialize the money display
+        // Ensure only one instance of MoneyCounter exists
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Call this method to add money
-    public void AddMoney(int amount)
+    // Method to increase the player's total cash
+    public void IncreaseCash(int amount)
     {
-        money += amount;
-        UpdateMoneyText();
+        totalCash += amount;
+        UpdateCashUI();
     }
 
-    // Call this method to deduct money
-    public void DeductMoney(int amount)
+    // Update the UI with the current cash value
+    private void UpdateCashUI()
     {
-        money -= amount;
-        if (money < 0)
-            money = 0; // Ensure the money doesn't go negative
-        UpdateMoneyText();
-    }
-
-    // Update the displayed money
-    void UpdateMoneyText()
-    {
-        moneyText.text = "Money: " + money.ToString();
+        cashText.text = "Cash: " + totalCash.ToString();
     }
 }

@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,406 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_0
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 5075
+        width: 789
+        height: 1410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b008bb5085a9e274ca026020b4189838
+      internalID: 695115344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_1
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 5056
+        width: 788
+        height: 1409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25ba54652868e6d4b94d827eb2883063
+      internalID: 722312540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_2
+      rect:
+        serializedVersion: 2
+        x: 2795
+        y: 5056
+        width: 788
+        height: 1409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afa1bc3f0fa86f14a9bb14d1919fbef6
+      internalID: -460866855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_3
+      rect:
+        serializedVersion: 2
+        x: 4156
+        y: 5056
+        width: 628
+        height: 1409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379f1424b371234418ea13cd6c5d9af8
+      internalID: -227874657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_4
+      rect:
+        serializedVersion: 2
+        x: 5476
+        y: 5056
+        width: 608
+        height: 1409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aedf5fc842ae9b24ab9a11476836baab
+      internalID: 1165944738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_5
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 3435
+        width: 608
+        height: 1410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40d000cd571ec704e9a4a0a024d26fd8
+      internalID: 1384054261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_6
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 3416
+        width: 849
+        height: 1409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c3b3787a22ae0749af283f6c4959eb4
+      internalID: -570993701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_7
+      rect:
+        serializedVersion: 2
+        x: 2917
+        y: 3416
+        width: 848
+        height: 1409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b51ed57ac8504443be0944dd44d6001
+      internalID: -1103848597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_8
+      rect:
+        serializedVersion: 2
+        x: 4076
+        y: 3435
+        width: 708
+        height: 1390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889a9489757509c498ad35e4a232f1e2
+      internalID: 889772376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_9
+      rect:
+        serializedVersion: 2
+        x: 5356
+        y: 3375
+        width: 789
+        height: 1450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76aafcc1e8dd3764fb025674744c9994
+      internalID: -372529551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_10
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 1677
+        width: 627
+        height: 1448
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a945cbdd276b582499d7b8fb5578f00f
+      internalID: -1195983696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_11
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 1655
+        width: 868
+        height: 1550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 043ecd3328755a844945e8cbc881f3b9
+      internalID: -1322496646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_12
+      rect:
+        serializedVersion: 2
+        x: 2737
+        y: 1655
+        width: 868
+        height: 1550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd133c03f9e60e49bb96964f8daf7b4
+      internalID: 1312336069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_13
+      rect:
+        serializedVersion: 2
+        x: 4156
+        y: 1677
+        width: 589
+        height: 1588
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a229076e0f7fa9c4b9e0d0f55854b1ae
+      internalID: 1176959864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_14
+      rect:
+        serializedVersion: 2
+        x: 5495
+        y: 1677
+        width: 589
+        height: 1588
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3515426f8666704a8974d5f5bb484f9
+      internalID: 1059631153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_15
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 56
+        width: 788
+        height: 1589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b0289f37d902604eabc25a0c9b182ec
+      internalID: -1334817508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_16
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 75
+        width: 790
+        height: 1570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56357f62d583fde4a9bdb6f112bd8f3d
+      internalID: 1841791103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_17
+      rect:
+        serializedVersion: 2
+        x: 2795
+        y: 136
+        width: 769
+        height: 1489
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb3c03e9a7b6904fa5cd181f62a4cf1
+      internalID: -1251109221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dale Sprite Sheet (1)_18
+      rect:
+        serializedVersion: 2
+        x: 4115
+        y: 136
+        width: 768
+        height: 1489
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d040caab9f4f87f48a65ee01b67eb4b8
+      internalID: 1213196723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +518,26 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dale Sprite Sheet (1)_0: 695115344
+      Dale Sprite Sheet (1)_1: 722312540
+      Dale Sprite Sheet (1)_10: -1195983696
+      Dale Sprite Sheet (1)_11: -1322496646
+      Dale Sprite Sheet (1)_12: 1312336069
+      Dale Sprite Sheet (1)_13: 1176959864
+      Dale Sprite Sheet (1)_14: 1059631153
+      Dale Sprite Sheet (1)_15: -1334817508
+      Dale Sprite Sheet (1)_16: 1841791103
+      Dale Sprite Sheet (1)_17: -1251109221
+      Dale Sprite Sheet (1)_18: 1213196723
+      Dale Sprite Sheet (1)_2: -460866855
+      Dale Sprite Sheet (1)_3: -227874657
+      Dale Sprite Sheet (1)_4: 1165944738
+      Dale Sprite Sheet (1)_5: 1384054261
+      Dale Sprite Sheet (1)_6: -570993701
+      Dale Sprite Sheet (1)_7: -1103848597
+      Dale Sprite Sheet (1)_8: 889772376
+      Dale Sprite Sheet (1)_9: -372529551
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

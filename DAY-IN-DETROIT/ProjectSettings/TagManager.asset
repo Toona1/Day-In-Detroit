@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Herb
   - Storyline
+  - Enemy
   layers:
   - Default
   - TransparentFX

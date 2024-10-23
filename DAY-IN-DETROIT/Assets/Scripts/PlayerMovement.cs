@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (herbMeter > 0) // (do this later) an afterimage effect on the player when this is active would be cool
         {
-            Debug.Log(herbMeter);
+            // Debug.Log(herbMeter);
             herbMeter -= 0.2f * Time.deltaTime;
         }
 
@@ -58,6 +58,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("herb touched");
             herbMeter = maxHerb;
+        }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("enemy touched");
         }
     }
 

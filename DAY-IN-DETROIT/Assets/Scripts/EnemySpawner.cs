@@ -20,8 +20,11 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator SpawnEnemy()
     {
-        yield return new WaitForSeconds(Random.Range(1, 10));
-        GameObject spawnedEnemy = Instantiate(enemyPrefab);
-        spawnedEnemy.transform.position = gameObject.transform.position;
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(1, 10));
+            GameObject spawnedEnemy = Instantiate(enemyPrefab);
+            spawnedEnemy.transform.position = gameObject.transform.position;
+        }
     }
 }

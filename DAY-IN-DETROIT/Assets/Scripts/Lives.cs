@@ -1,10 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 
 
 
@@ -60,6 +60,35 @@ public class Lives : MonoBehaviour
     void Start()
     {
         Lives lives = new Lives(6);
+    }
+
+    public void Update()
+    {
+        // Debug.Log(GetHearts());
+        switch (GetHealth()) // most slipshod code ever but it works well and i can't really think of a better way to do this
+        {
+            case 3:
+                life1.gameObject.SetActive(true);
+                life2.gameObject.SetActive(true);
+                life3.gameObject.SetActive(true);
+                break;
+            case 2:
+                life1.gameObject.SetActive(true);
+                life2.gameObject.SetActive(true);
+                life3.gameObject.SetActive(false);
+                break;
+            case 1:
+                life1.gameObject.SetActive(true);
+                life2.gameObject.SetActive(false);
+                life3.gameObject.SetActive(false);
+                break;
+            case 0:
+                life1.gameObject.SetActive(false);
+                life2.gameObject.SetActive(false);
+                life3.gameObject.SetActive(false);
+                Debug.Log("the player should be dead but i don't know how the scene changer works so someone replace this with code that sends you to the game over screen");
+                break;
+        }
     }
 
 }

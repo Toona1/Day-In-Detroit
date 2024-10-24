@@ -9,6 +9,7 @@ public class EnemyClass : MonoBehaviour // class and class variables
     private int _health;
     private float _speed;
     private float _distance;
+    MoneyCounter money;
 
     public EnemyClass(int health, int speed)
     {
@@ -49,6 +50,8 @@ public class EnemyClass : MonoBehaviour // class and class variables
     // Start is called before the first frame update
     void Start()
     {
+        // money = GameObject.FindGameObjectWithTag("Money").GetComponent<MoneyCounter>();
+
         SetHealth(Random.Range(2, 4)); // randomly sets the health of the enemy (might change or remove this later)
         SetSpeed(Random.Range(3, 6)); // randomly sets the speed of the enemy that's moving towards you
     }
@@ -72,6 +75,14 @@ public class EnemyClass : MonoBehaviour // class and class variables
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, GetSpeed() * Time.deltaTime);
         //transform.rotation = Quaternion.Euler(Vector3.forward * angle); // might comment this part out later because i don't know how the art is gonna look so i'm not sure if this is going to work well with it
         
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // money.IncreaseCash(-20);
+            Destroy(this.gameObject); // this does not drop money (whoever's setting up the code to actually kill the enemies make sure this section doesn't drop money)
+        }
     }
 
 }

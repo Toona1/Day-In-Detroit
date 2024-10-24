@@ -11,12 +11,15 @@ public class PlayerMovement : MonoBehaviour
     public float herbMeter = 0;
     public float maxHerb = 4;
     bool dashing = false;
-    // public LivesController lives;
+    bool canBeHit = true;
+    Lives health;
     
     // Start is called before the first frame update
     void Start()
     {
-
+        health = GameObject.FindGameObjectWithTag("Lives").GetComponent<Lives>();
+        health.SetHealth(3);
+        // health.SetHealth(health.GetHealth() - 1); //testing if it works
     }
 
     // Update is called once per frame
@@ -63,13 +66,13 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("herb touched");
             herbMeter = maxHerb;
         }
-
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && canBeHit == true) // i tried to make this a trigger for a while but it didn't pan out so i just kept it on oncollisionenter2d
         {
-            //Debug.Log("enemy touched");
-            // lives.SetHealth(1);
-            // Debug.Log($"health: {lives.GetHealth()}");
+            Debug.Log("enemy touched");
+            health.SetHealth(health.GetHealth() - 1);
+            StartCoroutine(Invincible(1));
         }
+
     }
 
     IEnumerator Dash(int speedincrease)
@@ -80,5 +83,11 @@ public class PlayerMovement : MonoBehaviour
         speed -= speedincrease;
         yield return new WaitForSeconds(0.5f); // cooldown on the dash
         dashing = false;
+    }
+    IEnumerator Invincible(int time)
+    {
+        canBeHit = false;
+        yield return new WaitForSeconds(time);
+        canBeHit = true;
     }
 }

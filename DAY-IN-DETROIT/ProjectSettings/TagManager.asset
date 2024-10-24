@@ -7,6 +7,8 @@ TagManager:
   - Herb
   - Storyline
   - Enemy
+  - Lives
+  - Money
   layers:
   - Default
   - TransparentFX

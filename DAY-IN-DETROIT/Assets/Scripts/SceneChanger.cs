@@ -20,12 +20,12 @@ public class Scenes : MonoBehaviour
     //Runs when player health reaches zero
     public void PlayerDeath()
     {
-        SceneManager.LoadScene("Death Screen");
+        SceneManager.LoadScene("Game Over");
     }
 
-    //Runs when player get home with positive money
+    //Runs when player get home
     public void PlayerWin()
     {
-        SceneManager.LoadScene("Win Screen");
+        SceneManager.LoadScene("Win");
     }
 }

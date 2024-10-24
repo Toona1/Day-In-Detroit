@@ -14,6 +14,12 @@ public class StorylineClass : MonoBehaviour
     private string _storyText2;
     private int _delay;
 
+    public StorylineClass(string text1, string text2, int delay) {
+        this._storyText1 = text1;
+        this._storyText2 = text2;
+        this._delay = delay;
+    }
+
     //Getters and setters for texts and delay
     public void SetText1(string text) {
         this._storyText1 = text;
@@ -62,10 +68,7 @@ public class StorylineClass : MonoBehaviour
         SetText1(storylineText.GetText1());
         SetText2(storylineText.GetText2());
         SetDelay(storylineText.GetDelay());
-
-        Debug.Log("Class running");
         text.text = " ";
-        Debug.Log("Class running");
         StartCoroutine(TextOutputAndDelay());
     }
 

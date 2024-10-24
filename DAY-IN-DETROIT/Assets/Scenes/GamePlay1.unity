@@ -565,8 +565,10 @@ GameObject:
   - component: {fileID: 218107258}
   - component: {fileID: 218107260}
   - component: {fileID: 218107259}
+  - component: {fileID: 218107261}
+  - component: {fileID: 218107262}
   m_Layer: 0
-  m_Name: Square
+  m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -581,7 +583,7 @@ Transform:
   m_GameObject: {fileID: 218107257}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -81.61, y: -1.1294, z: 3.8206456}
+  m_LocalPosition: {x: -79.84, y: -1.1294, z: 3.8206456}
   m_LocalScale: {x: 1, y: 11.416184, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -684,6 +686,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &218107261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218107257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ea8f106455c9a47869f8105eb95394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenes: {fileID: 1721238708}
+--- !u!50 &218107262
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218107257}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &257507750
 GameObject:
   m_ObjectHideFlags: 0

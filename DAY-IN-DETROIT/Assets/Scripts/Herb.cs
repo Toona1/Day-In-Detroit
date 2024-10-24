@@ -20,7 +20,7 @@ public class Herb : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            
+
         }
     }
 }

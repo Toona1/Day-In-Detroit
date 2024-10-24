@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         health = GameObject.FindGameObjectWithTag("Lives").GetComponent<Lives>();
-        health.SetHealth(3);
+        health.UpdateHealth(3);
         // health.SetHealth(health.GetHealth() - 1); //testing if it works
     }
 
@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") && canBeHit == true) // i tried to make this a trigger for a while but it didn't pan out so i just kept it on oncollisionenter2d
         {
             Debug.Log("enemy touched");
-            health.SetHealth(health.GetHealth() - 1);
+            health.UpdateHealth(health.GetHealth() - 1);
             StartCoroutine(Invincible(1));
         }
 

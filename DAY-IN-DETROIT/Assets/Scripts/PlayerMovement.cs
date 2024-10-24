@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float herbMeter = 0;
     public float maxHerb = 4;
     bool dashing = false;
-    public LivesController lives;
+    // public LivesController lives;
     
     // Start is called before the first frame update
     void Start()
@@ -67,8 +67,8 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             //Debug.Log("enemy touched");
-            lives.SetHealth(1);
-            Debug.Log($"health: {lives.GetHealth()}");
+            // lives.SetHealth(1);
+            // Debug.Log($"health: {lives.GetHealth()}");
         }
     }
 

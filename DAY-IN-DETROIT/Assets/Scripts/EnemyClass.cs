@@ -9,6 +9,8 @@ public class EnemyClass : MonoBehaviour // class and class variables
     private int _health;
     private float _speed;
     private float _distance;
+    private Rigidbody2D body;
+    private SpriteRenderer spriteRenderer;
     MoneyCounter money;
 
     public EnemyClass(int health, int speed)
@@ -50,6 +52,8 @@ public class EnemyClass : MonoBehaviour // class and class variables
     // Start is called before the first frame update
     void Start()
     {
+        body = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         // money = GameObject.FindGameObjectWithTag("Money").GetComponent<MoneyCounter>();
 
         SetHealth(Random.Range(2, 4)); // randomly sets the health of the enemy (might change or remove this later)
@@ -59,15 +63,17 @@ public class EnemyClass : MonoBehaviour // class and class variables
     // Update is called once per frame
     void Update()
     {
+        // Debug.Log(GetDistance());
         SetDistance(Vector2.Distance(transform.position, player.transform.position)); // code to make the enemy follow and turn to the player
-        if (GetDistance() > 0f)
-        {
-            //sprite.flipX = false;
-        }
-        if (GetDistance() < 0f)
-        {
-            //sprite.flipX = true;
-        }
+
+        //if (GetDistance() > 0f)
+        //{
+        //    spriteRenderer.flipX = false;
+        //}
+        //if (GetDistance() < 0f)
+        //{
+        //    spriteRenderer.flipX = true;
+        //}
 
         //Vector2 direction = player.transform.position - transform.position;
         //direction.Normalize();

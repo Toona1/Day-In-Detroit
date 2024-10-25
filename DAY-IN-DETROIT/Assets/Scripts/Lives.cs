@@ -14,10 +14,12 @@ public class Lives : MonoBehaviour
     private GameObject life1, life2, life3;
     public Scenes scenesScript;
 
+    // Lives variables
     private int _health;
     private int _hearts;
     private int _healthPerHeart;
 
+    // Constructor
     public void LivesSetup(int health)
     {
         if (health % 3 != 0)
@@ -32,6 +34,7 @@ public class Lives : MonoBehaviour
         this._health = health;
         this._healthPerHeart = health / 3;
     }
+    // Checks health to see if hearts need to be removed
     public void UpdateHealth(int health)
     {
         this._health = health;
@@ -51,6 +54,7 @@ public class Lives : MonoBehaviour
             Destroy(life3);
         }
     }
+    // Getters and setters
     public int GetHealth()
     {
         return this._health;
@@ -60,7 +64,7 @@ public class Lives : MonoBehaviour
         return this._hearts;
     }
 
-    // Start is called before the first frame update
+    // Initializes
     void Start()
     {
         this.LivesSetup(3);

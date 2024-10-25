@@ -6,12 +6,13 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-
 public class Lives : MonoBehaviour
 {
+    // Referance to heart game objects
     [SerializeField]
     private GameObject life1, life2, life3;
+
+    // Referance to scenes class 
     public Scenes scenesScript;
 
     // Lives variables
@@ -19,7 +20,7 @@ public class Lives : MonoBehaviour
     private int _hearts;
     private int _healthPerHeart;
 
-    // Constructor
+    // Builds variables (sort of constructor)
     public void LivesSetup(int health)
     {
         if (health % 3 != 0)
@@ -59,23 +60,25 @@ public class Lives : MonoBehaviour
     {
         return this._health;
     }
+    public void SetHealth(int health) 
+    {
+        this._health = health;
+    }
     public int GetHearts()
     {
         return this._hearts;
     }
+    public void SetHearts(int hearts) 
+    {
+        this._hearts = hearts;
+    }
 
-    // Initializes
+    // Initializes health of player
     void Start()
     {
-        this.LivesSetup(3);
+        SetHealth(6);
+        LivesSetup(GetHealth());
 
     }
-
-    void Update()
-    {
-        //Debug.Log(this.GetHealth());
-    }
-
-
 
 }

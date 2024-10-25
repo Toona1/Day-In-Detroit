@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 
 public class StorylineClass : MonoBehaviour
 {
+    // Referance to scenes class and Unity text controller
     public TextMeshProUGUI text;
     public StorylineController storylineText;
 
@@ -14,13 +15,14 @@ public class StorylineClass : MonoBehaviour
     private string _storyText2;
     private int _delay;
 
+    // Builds variables (sort of constructor)
     public StorylineClass(string text1, string text2, int delay) {
         this._storyText1 = text1;
         this._storyText2 = text2;
         this._delay = delay;
     }
 
-    //Getters and setters for texts and delay
+    // Getters and setters for texts and delay
     public void SetText1(string text) {
         this._storyText1 = text;
     }
@@ -37,7 +39,7 @@ public class StorylineClass : MonoBehaviour
         this._delay = delay;
     }
 
-    //Coroutines regulating the output of text
+    // Coroutines regulating the output of text
     public IEnumerator TextOutput(string storyText)
     {
         for (int i = 0; i < storyText.Length; i++)
@@ -49,10 +51,13 @@ public class StorylineClass : MonoBehaviour
         text.text = "";
 
     }
+    // Delay between stoyline text
     public IEnumerator TextSecDelay(int delay)
     {
         yield return new WaitForSeconds(delay);
     }
+
+    // Runs coroutines one at a time
     public IEnumerator TextOutputAndDelay()
     {
         yield return StartCoroutine(TextOutput(this._storyText1));
@@ -61,7 +66,7 @@ public class StorylineClass : MonoBehaviour
         yield return StartCoroutine(TextSecDelay(this._delay));
     }
 
-    //Gets and sets values 
+    // Gets and sets values 
     void Start()
     {
         storylineText = GetComponent<StorylineController>();

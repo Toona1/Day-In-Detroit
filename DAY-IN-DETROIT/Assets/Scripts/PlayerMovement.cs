@@ -60,15 +60,14 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Debug.Log(collision.gameObject.name);
         if (collision.gameObject.CompareTag("Herb"))
         {
-            Debug.Log("herb touched");
+            //Debug.Log("herb touched");
             herbMeter = maxHerb;
         }
-        if (collision.gameObject.CompareTag("Enemy") && canBeHit == true) // i tried to make this a trigger for a while but it didn't pan out so i just kept it on oncollisionenter2d
+        if (collision.gameObject.CompareTag("Enemy") && canBeHit == true) 
         {
-            Debug.Log("enemy touched");
+            //Debug.Log("enemy touched");
             Debug.Log(health.GetHealth());
             health.UpdateHealth(health.GetHealth() - 1);
             StartCoroutine(Invincible(1));

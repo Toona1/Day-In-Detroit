@@ -11,7 +11,7 @@ public class Scenes : MonoBehaviour
         SceneManager.LoadScene("GamePlay1");
     }
 
-    // Runs when "try again" or "play again" buttons prssed
+    // Runs when "restart" or "play again" buttons prssed
     public void EnterMenu()
     {
         SceneManager.LoadScene("Main Menu");

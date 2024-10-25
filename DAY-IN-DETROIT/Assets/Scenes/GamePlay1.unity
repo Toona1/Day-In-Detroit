@@ -2246,7 +2246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -500}
+  m_AnchoredPosition: {x: 0, y: -570}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &663607923
@@ -2256,12 +2256,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663607921}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20e2fcad2e701ae419c168f790b86abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meter: {fileID: 663607921}
+  meter: {fileID: 1679485543}
   x: 0
   y: 100
   z: 1
@@ -3751,7 +3751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   herbMeter: 0
-  maxHerb: 4
+  maxHerb: 2
 --- !u!50 &1679485544
 Rigidbody2D:
   serializedVersion: 4

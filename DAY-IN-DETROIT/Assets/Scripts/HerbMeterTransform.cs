@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class HerbMeterTransform : MonoBehaviour
 {
-    [SerializeField] PlayerMovement meter;
+    public PlayerMovement meter;
     [SerializeField] float x, y, z;
-    PlayerMovement player;
+    // PlayerMovement player;
 
     // Start is called before the first frame update
     void Start()
     {
-        //meter = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        meter = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //meter.transform.localScale = new Vector3(player.herbMeter, y, z);
+        transform.localScale = new Vector3(meter.herbMeter * 960, y, z);
     }
 }

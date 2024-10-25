@@ -49,6 +49,11 @@ public class EnemyClass : MonoBehaviour // class and class variables
         _distance = distance;
     }
 
+    public void Disappear()
+    {
+        Destroy(this.gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

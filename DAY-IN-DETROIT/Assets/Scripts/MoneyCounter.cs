@@ -5,14 +5,13 @@ using TMPro;
 
 public class MoneyCounter : MonoBehaviour
 {
-    public static MoneyCounter instance; // Singleton instance
+    public static MoneyCounter instance;
 
-    private int totalCash; // Player's total cash
-    public TMP_Text cashText; // Reference to the UI text to display cash amount
+    private int totalCash;
+    public TMP_Text cashText;
 
     private void Awake()
     {
-        // Ensure only one instance of MoneyCounter exists
         if (instance == null)
         {
             instance = this;
@@ -23,14 +22,24 @@ public class MoneyCounter : MonoBehaviour
         }
     }
 
-    // Method to increase the player's total cash
     public void IncreaseCash(int amount)
     {
         totalCash += amount;
         UpdateCashUI();
     }
 
-    // Update the UI with the current cash value
+    public void DeductCash(int amount)
+    {
+        totalCash -= amount;
+        UpdateCashUI();
+        Debug.Log("Cash deducted! Current balance: " + totalCash);
+    }
+
+    public int GetTotalCash()
+    {
+        return totalCash;
+    }
+
     private void UpdateCashUI()
     {
         cashText.text = "Cash: " + totalCash.ToString();

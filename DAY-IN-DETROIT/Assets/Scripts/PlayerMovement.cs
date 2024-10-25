@@ -12,9 +12,13 @@ public class PlayerMovement : MonoBehaviour
     public float herbMeter = 0;
     public float maxHerb = 4;
     bool dashing = false;
+    bool punching = false;
 
     bool canBeHit = true;
     Lives health;
+
+    public Animator anim;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -22,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
         health = GameObject.FindGameObjectWithTag("Lives").GetComponent<Lives>();
         //health.UpdateHealth(3);
         // health.SetHealth(health.GetHealth() - 1); //testing if it works
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -91,19 +95,22 @@ public class PlayerMovement : MonoBehaviour
         if (direction == true) {
             speed += speedincrease;
             dashing = true;
+            anim.SetBool("IsDashing", true);
             yield return new WaitForSeconds(0.5f);
             speed -= speedincrease;
             yield return new WaitForSeconds(0.5f); // cooldown on the dash
             dashing = false;
+            anim.SetBool("IsDashing", false);
         } else if (direction == false){
             speed += speedincrease;
             dashing = true;
+            anim.SetBool("IsDashing 0", true);
             yield return new WaitForSeconds(0.5f);
             speed -= speedincrease;
             yield return new WaitForSeconds(0.5f); // cooldown on the dash
             dashing = false;
+            anim.SetBool("IsDashing 0", false);
         }
-        
     }
 
     IEnumerator Invincible(int time)
@@ -115,19 +122,22 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Punch(bool direction)
     {
-        if (direction == true) {
-
-            yield return new WaitForSeconds(1f);
-            yield return new WaitForSeconds(1f); // cooldown on the dash
-
-        } else {
-
-            yield return new WaitForSeconds(1f);
-            yield return new WaitForSeconds(1f); // cooldown on the dash
-
-        }
-        
+    if (direction == true) {
+        punching = true;
+        anim.SetBool("IsPunch", true);
+        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1f); // cooldown on the dash
+        punching = false;
+        anim.SetBool("IsPunch", false);
+    } else {
+        punching = true;
+        anim.SetBool("IsPunch 0", true);
+        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1f); // cooldown on the dash
+        punching = false;
+        anim.SetBool("IsPunch 0", false);
     }
-
+}
+    
 }
 

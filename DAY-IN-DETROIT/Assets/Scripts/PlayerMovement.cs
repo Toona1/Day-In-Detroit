@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float herbMeter = 0;
     public float maxHerb = 4;
     bool dashing = false;
-<<<<<<< Updated upstream
+    bool punching = false;
     bool canBeHit = true;
     Lives health;
     
@@ -22,15 +22,10 @@ public class PlayerMovement : MonoBehaviour
         health = GameObject.FindGameObjectWithTag("Lives").GetComponent<Lives>();
         //health.UpdateHealth(3);
         // health.SetHealth(health.GetHealth() - 1); //testing if it works
-=======
-    bool punching = false;
-
-    Animator animator;
-    
-    // Use this for initialization
-    void Start () {
-        animator = GetComponent<Animator>();
->>>>>>> Stashed changes
+        
+        Animator anim;
+        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -94,64 +89,56 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-<<<<<<< Updated upstream
-    IEnumerator Dash(int speedincrease)
-=======
-
     IEnumerator Dash(int speedincrease, bool direction)
->>>>>>> Stashed changes
     {
         if (direction == true) {
             speed += speedincrease;
             dashing = true;
-            animator.SetBool("IsDashing", true);
+            anim.SetBool("IsDashing", true);
             yield return new WaitForSeconds(0.5f);
             speed -= speedincrease;
             yield return new WaitForSeconds(0.5f); // cooldown on the dash
             dashing = false;
-            animator.SetBool("IsDashing", false);
+            anim.SetBool("IsDashing", false);
         } else if (direction == false){
             speed += speedincrease;
             dashing = true;
-            animator.SetBool("IsDashing 0", true);
+            anim.SetBool("IsDashing 0", true);
             yield return new WaitForSeconds(0.5f);
             speed -= speedincrease;
             yield return new WaitForSeconds(0.5f); // cooldown on the dash
             dashing = false;
-            animator.SetBool("IsDashing 0", false);
+            anim.SetBool("IsDashing 0", false);
         }
         
     }
-<<<<<<< Updated upstream
+
     IEnumerator Invincible(int time)
     {
         canBeHit = false;
         yield return new WaitForSeconds(time);
         canBeHit = true;
     }
-=======
 
     IEnumerator Punch(bool direction)
     {
         if (direction == true) {
             punching = true;
-            animator.SetBool("IsPunch", true);
+            anim.SetBool("IsPunch", true);
             yield return new WaitForSeconds(1f);
             yield return new WaitForSeconds(1f); // cooldown on the dash
             punching = false;
-            animator.SetBool("IsPunch", false);
+            anim.SetBool("IsPunch", false);
         } else {
             punching = true;
-            animator.SetBool("IsPunch 0", true);
+            anim.SetBool("IsPunch 0", true);
             yield return new WaitForSeconds(1f);
             yield return new WaitForSeconds(1f); // cooldown on the dash
             punching = false;
-            animator.SetBool("IsPunch 0", false);
+            anim.SetBool("IsPunch 0", false);
         }
         
     }
 
-
->>>>>>> Stashed changes
 }
 

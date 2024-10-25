@@ -15,7 +15,8 @@ public class PlayerMovement : MonoBehaviour
     bool punching = false;
     bool canBeHit = true;
     Lives health;
-    
+    Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
         //health.UpdateHealth(3);
         // health.SetHealth(health.GetHealth() - 1); //testing if it works
         
-        Animator anim;
         
         anim = GetComponent<Animator>();
     }

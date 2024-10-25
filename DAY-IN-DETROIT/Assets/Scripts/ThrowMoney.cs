@@ -39,7 +39,6 @@ public class ThrowMoney : MonoBehaviour
             // Instantiate the bullet and set its position
             GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, Quaternion.identity);
 
-            // Get the Rigidbody2D component of the bullet
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
 
             if (bulletRb != null)

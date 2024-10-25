@@ -3980,7 +3980,10 @@ GameObject:
   - component: {fileID: 1679485543}
   - component: {fileID: 1679485542}
   - component: {fileID: 1679485547}
+<<<<<<< Updated upstream
   - component: {fileID: 1679485548}
+=======
+>>>>>>> Stashed changes
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -4143,14 +4146,21 @@ Transform:
   - {fileID: 1523036956}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!114 &1679485547
 MonoBehaviour:
+=======
+--- !u!95 &1679485547
+Animator:
+  serializedVersion: 5
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679485541}
   m_Enabled: 1
+<<<<<<< Updated upstream
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1188eb785d6b7a45b7341131dd8da0a, type: 3}
   m_Name: 
@@ -4174,6 +4184,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 1523036956}
   rotationAmount: 180
+=======
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1436f6b72581ca747b45354944caa846, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+>>>>>>> Stashed changes
 --- !u!1 &1714859664
 GameObject:
   m_ObjectHideFlags: 0

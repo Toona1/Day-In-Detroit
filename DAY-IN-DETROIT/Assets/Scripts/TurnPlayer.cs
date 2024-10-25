@@ -9,16 +9,20 @@ public class ShootingPointRotation : MonoBehaviour
 
     void Update()
     {
+        // If the right arrow is pressed and shooting point is not already facing right
         if (Input.GetKeyDown(KeyCode.RightArrow) && !isFacingRight)
         {
-            shootingPoint.rotation = Quaternion.Euler(0, 0, 0);
-            isFacingRight = true; 
+            // Rotate the shooting point to face right
+            shootingPoint.rotation = Quaternion.Euler(0, 0, 0); // Facing forward (adjust as needed)
+            isFacingRight = true; // Update the state
         }
 
+        // If the left arrow is pressed and shooting point is not already facing left
         if (Input.GetKeyDown(KeyCode.LeftArrow) && isFacingRight)
         {
-            shootingPoint.rotation = Quaternion.Euler(0, 180, 0); 
-            isFacingRight = false;
+            // Rotate the shooting point to face left
+            shootingPoint.rotation = Quaternion.Euler(0, 180, 0); // Facing left (adjust as needed)
+            isFacingRight = false; // Update the state
         }
     }
 }

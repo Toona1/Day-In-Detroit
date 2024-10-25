@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -11,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float herbMeter = 0;
     public float maxHerb = 4;
     bool dashing = false;
+    bool punching = false;
     bool canBeHit = true;
     Lives health;
     
@@ -20,6 +22,10 @@ public class PlayerMovement : MonoBehaviour
         health = GameObject.FindGameObjectWithTag("Lives").GetComponent<Lives>();
         //health.UpdateHealth(3);
         // health.SetHealth(health.GetHealth() - 1); //testing if it works
+        
+        Animator anim;
+        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -45,9 +51,17 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.S) & dashing == false) // have to use keydown here because getkey runs every single frame
         {
-            StartCoroutine(Dash(5));
+            StartCoroutine(Dash(5, true));
         }
-        
+        if (Input.GetKey(KeyCode.D) & (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))) 
+        {
+            StartCoroutine(Punch(false));
+        }
+        if (Input.GetKey(KeyCode.D) & Input.GetKey(KeyCode.DownArrow)) 
+        {
+            StartCoroutine(Punch(true));
+        }
+
         transform.position = pos;
 
         if (herbMeter > 0) // (do this later) an afterimage effect on the player when this is active would be cool
@@ -75,19 +89,56 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    IEnumerator Dash(int speedincrease)
+    IEnumerator Dash(int speedincrease, bool direction)
     {
-        speed += speedincrease;
-        dashing = true;
-        yield return new WaitForSeconds(0.5f);
-        speed -= speedincrease;
-        yield return new WaitForSeconds(0.5f); // cooldown on the dash
-        dashing = false;
+        if (direction == true) {
+            speed += speedincrease;
+            dashing = true;
+            anim.SetBool("IsDashing", true);
+            yield return new WaitForSeconds(0.5f);
+            speed -= speedincrease;
+            yield return new WaitForSeconds(0.5f); // cooldown on the dash
+            dashing = false;
+            anim.SetBool("IsDashing", false);
+        } else if (direction == false){
+            speed += speedincrease;
+            dashing = true;
+            anim.SetBool("IsDashing 0", true);
+            yield return new WaitForSeconds(0.5f);
+            speed -= speedincrease;
+            yield return new WaitForSeconds(0.5f); // cooldown on the dash
+            dashing = false;
+            anim.SetBool("IsDashing 0", false);
+        }
+        
     }
+
     IEnumerator Invincible(int time)
     {
         canBeHit = false;
         yield return new WaitForSeconds(time);
         canBeHit = true;
     }
+
+    IEnumerator Punch(bool direction)
+    {
+        if (direction == true) {
+            punching = true;
+            anim.SetBool("IsPunch", true);
+            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1f); // cooldown on the dash
+            punching = false;
+            anim.SetBool("IsPunch", false);
+        } else {
+            punching = true;
+            anim.SetBool("IsPunch 0", true);
+            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1f); // cooldown on the dash
+            punching = false;
+            anim.SetBool("IsPunch 0", false);
+        }
+        
+    }
+
 }
+

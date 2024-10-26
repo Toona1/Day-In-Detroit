@@ -11,8 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed; // no value assigned as you can do that in the unity object
     public float herbMeter = 0;
     public float maxHerb = 4;
-    public bool dashing = false;
-    public bool punching = false;
+    bool dashing = false;
+    bool punching = false;
 
     bool canBeHit = true;
     Lives health;
@@ -36,28 +36,28 @@ public class PlayerMovement : MonoBehaviour
         Vector2 pos = transform.position;
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            pos.x -= (speed + herbMeter * 2) * Time.deltaTime;
+            pos.x -= (speed + herbMeter) * Time.deltaTime;
             anim.SetFloat("Speed", 0.06f);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            pos.x += (speed + herbMeter * 2) * Time.deltaTime;
+            pos.x += (speed + herbMeter) * Time.deltaTime;
             anim.SetFloat("Speed", 0.06f);
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            pos.y += (speed + herbMeter * 2) * Time.deltaTime;
+            pos.y += (speed + herbMeter) * Time.deltaTime;
             anim.SetFloat("Speed", -0.06f);
         }
         if (Input.GetKey(KeyCode.DownArrow))  
         {
-            pos.y -= (speed + herbMeter * 2) * Time.deltaTime;
-            anim.SetFloat("Speed", -0.06f);
+            pos.y -= (speed + herbMeter) * Time.deltaTime;
+            anim.SetFloat("Speed", 0.06f);
         }
         
         if (Input.GetKeyDown(KeyCode.S) & dashing == false) // have to use keydown here because getkey runs every single frame
         {
-            StartCoroutine(Dash(3, true));
+            StartCoroutine(Dash(5, true));
         }
         if (Input.GetKey(KeyCode.D) & (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))) 
         {
@@ -70,10 +70,10 @@ public class PlayerMovement : MonoBehaviour
 
         transform.position = pos;
 
-        if (herbMeter > 0)
+        if (herbMeter > 0) // (do this later) an afterimage effect on the player when this is active would be cool
         {
             // Debug.Log(herbMeter);
-            herbMeter -= 0.5f * Time.deltaTime;
+            herbMeter -= 0.2f * Time.deltaTime;
         }
 
     }
@@ -103,18 +103,18 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("IsDashing", true);
             yield return new WaitForSeconds(0.5f);
             speed -= speedincrease;
-            anim.SetBool("IsDashing", false);
-            yield return new WaitForSeconds(2f); // cooldown on the dash
+            yield return new WaitForSeconds(0.5f); // cooldown on the dash
             dashing = false;
+            anim.SetBool("IsDashing", false);
         } else if (direction == false){
             speed += speedincrease;
             dashing = true;
             anim.SetBool("IsDashing 0", true);
             yield return new WaitForSeconds(0.5f);
             speed -= speedincrease;
-            anim.SetBool("IsDashing 0", false);
-            yield return new WaitForSeconds(2f); // cooldown on the dash
+            yield return new WaitForSeconds(0.5f); // cooldown on the dash
             dashing = false;
+            anim.SetBool("IsDashing 0", false);
         }
         yield return new WaitForSeconds(3);
     }

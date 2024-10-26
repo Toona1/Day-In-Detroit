@@ -18,8 +18,8 @@ public class PlayerMovement : MonoBehaviour
     Lives health;
 
     public Animator anim;
-    
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,44 +36,44 @@ public class PlayerMovement : MonoBehaviour
         Vector2 pos = transform.position;
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            pos.x -= (speed + herbMeter) * Time.deltaTime;
+            pos.x -= (speed + herbMeter * 2) * Time.deltaTime;
             anim.SetFloat("Speed", 0.06f);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            pos.x += (speed + herbMeter) * Time.deltaTime;
+            pos.x += (speed + herbMeter * 2) * Time.deltaTime;
             anim.SetFloat("Speed", 0.06f);
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            pos.y += (speed + herbMeter) * Time.deltaTime;
+            pos.y += (speed + herbMeter * 2) * Time.deltaTime;
             anim.SetFloat("Speed", -0.06f);
         }
-        if (Input.GetKey(KeyCode.DownArrow))  
+        if (Input.GetKey(KeyCode.DownArrow))
         {
-            pos.y -= (speed + herbMeter) * Time.deltaTime;
-            anim.SetFloat("Speed", 0.06f);
+            pos.y -= (speed + herbMeter * 2) * Time.deltaTime;
+            anim.SetFloat("Speed", -0.06f);
         }
-        
+
         if (Input.GetKeyDown(KeyCode.S) & dashing == false) // have to use keydown here because getkey runs every single frame
         {
-            StartCoroutine(Dash(5, true));
+            StartCoroutine(Dash(3, true));
         }
-        if (Input.GetKey(KeyCode.D) & (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))) 
+        if (Input.GetKey(KeyCode.D) & (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)))
         {
             StartCoroutine(Punch(false));
         }
-        if (Input.GetKey(KeyCode.D) & Input.GetKey(KeyCode.DownArrow)) 
+        if (Input.GetKey(KeyCode.D) & Input.GetKey(KeyCode.DownArrow))
         {
             StartCoroutine(Punch(true));
         }
 
         transform.position = pos;
 
-        if (herbMeter > 0) // (do this later) an afterimage effect on the player when this is active would be cool
+        if (herbMeter > 0)
         {
             // Debug.Log(herbMeter);
-            herbMeter -= 0.2f * Time.deltaTime;
+            herbMeter -= 0.5f * Time.deltaTime;
         }
 
     }
@@ -85,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log("herb touched");
             herbMeter = maxHerb;
         }
-        if (collision.gameObject.CompareTag("Enemy") && canBeHit == true) 
+        if (collision.gameObject.CompareTag("Enemy") && canBeHit == true)
         {
             //Debug.Log("enemy touched");
             Debug.Log(health.GetHealth());
@@ -97,24 +97,27 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Dash(int speedincrease, bool direction)
     {
-        if (direction == true) {
+        if (direction == true)
+        {
             speed += speedincrease;
             dashing = true;
             anim.SetBool("IsDashing", true);
             yield return new WaitForSeconds(0.5f);
             speed -= speedincrease;
-            yield return new WaitForSeconds(0.5f); // cooldown on the dash
-            dashing = false;
             anim.SetBool("IsDashing", false);
-        } else if (direction == false){
+            yield return new WaitForSeconds(2f); // cooldown on the dash
+            dashing = false;
+        }
+        else if (direction == false)
+        {
             speed += speedincrease;
             dashing = true;
             anim.SetBool("IsDashing 0", true);
             yield return new WaitForSeconds(0.5f);
             speed -= speedincrease;
-            yield return new WaitForSeconds(0.5f); // cooldown on the dash
-            dashing = false;
             anim.SetBool("IsDashing 0", false);
+            yield return new WaitForSeconds(2f); // cooldown on the dash
+            dashing = false;
         }
         yield return new WaitForSeconds(3);
     }
@@ -129,14 +132,17 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator Punch(bool direction)
     {
         canBeHit = false;
-        if (direction == true) {
+        if (direction == true)
+        {
             punching = true;
             anim.SetBool("IsPunch", true);
             yield return new WaitForSeconds(1f);
             yield return new WaitForSeconds(1f); // cooldown on the dash
             punching = false;
             anim.SetBool("IsPunch", false);
-        } else {
+        }
+        else
+        {
             punching = true;
             anim.SetBool("IsPunch 0", true);
             yield return new WaitForSeconds(1f);
@@ -148,4 +154,3 @@ public class PlayerMovement : MonoBehaviour
     }
 
 }
-

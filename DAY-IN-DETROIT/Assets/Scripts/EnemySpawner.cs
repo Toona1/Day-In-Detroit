@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(1, 10));
+            yield return new WaitForSeconds(Random.Range(5, 10));
             GameObject spawnedEnemy = Instantiate(enemyPrefab);
             spawnedEnemy.transform.position = gameObject.transform.position;
         }

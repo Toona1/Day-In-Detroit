@@ -4046,9 +4046,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c12544623fdee9f41b717201a639bbc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 4
   herbMeter: 0
   maxHerb: 2
+  dashing: 0
+  punching: 0
+  anim: {fileID: 0}
 --- !u!50 &1679485544
 Rigidbody2D:
   serializedVersion: 4

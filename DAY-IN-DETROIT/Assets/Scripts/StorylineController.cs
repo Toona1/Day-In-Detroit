@@ -11,7 +11,7 @@ public class StorylineController : MonoBehaviour
 
     // Storyline variables 
     private string _text1 = "You are Dale, Dale lives in Detroit, Dale needs to get home from work with all the money he made. Simple.";
-    private string _text2 = "Lester is calling.'The IRS will be at your place soon, destroy the evidence'...Dave needs to get home quickly...";
+    private string _text2 = "Lester is calling.'The IRS will be at your place soon, destroy the evidence'...Dale needs to get home quickly...";
     private int _delay = 10;
 
 

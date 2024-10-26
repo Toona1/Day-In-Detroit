@@ -12,6 +12,7 @@ public class EnemyClass : MonoBehaviour // class and class variables
     private Rigidbody2D body;
     private SpriteRenderer spriteRenderer;
     MoneyCounter money;
+    PlayerMovement punching;
 
     public EnemyClass(int health, int speed)
     {
@@ -59,9 +60,10 @@ public class EnemyClass : MonoBehaviour // class and class variables
     {
         body = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        punching = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         // money = GameObject.FindGameObjectWithTag("Money").GetComponent<MoneyCounter>();
 
-        SetHealth(Random.Range(2, 4)); // randomly sets the health of the enemy (might change or remove this later)
+        SetHealth(Random.Range(1, 3)); // randomly sets the health of the enemy (might change or remove this later)
         SetSpeed(Random.Range(3, 6)); // randomly sets the speed of the enemy that's moving towards you
     }
 
@@ -86,13 +88,25 @@ public class EnemyClass : MonoBehaviour // class and class variables
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, GetSpeed() * Time.deltaTime);
         //transform.rotation = Quaternion.Euler(Vector3.forward * angle); // might comment this part out later because i don't know how the art is gonna look so i'm not sure if this is going to work well with it
         
+        if (GetHealth() <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // money.IncreaseCash(-20);
-            Destroy(this.gameObject); // this does not drop money (whoever's setting up the code to actually kill the enemies make sure this section doesn't drop money)
+            if (punching.punching == true)
+            {
+                Vector2 pos = transform.position;
+                SetHealth(GetHealth() - 1);
+            }
+            else
+            {
+                // money.IncreaseCash(-20); // originally was going to have them take away money but found it to be redundant
+                Destroy(this.gameObject);
+            }
         }
     }
 

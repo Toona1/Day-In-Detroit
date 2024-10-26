@@ -37,19 +37,24 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             pos.x -= (speed + herbMeter) * Time.deltaTime;
+            anim.SetFloat("Speed", 0.1f);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             pos.x += (speed + herbMeter) * Time.deltaTime;
+            anim.SetFloat("Speed", 0.1f);
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
             pos.y += (speed + herbMeter) * Time.deltaTime;
+            anim.SetFloat("Speed", -0.1f);
         }
         if (Input.GetKey(KeyCode.DownArrow))  
         {
             pos.y -= (speed + herbMeter) * Time.deltaTime;
+            anim.SetFloat("Speed", 0.1f);
         }
+        
         if (Input.GetKeyDown(KeyCode.S) & dashing == false) // have to use keydown here because getkey runs every single frame
         {
             StartCoroutine(Dash(5, true));
@@ -85,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log("enemy touched");
             Debug.Log(health.GetHealth());
             health.UpdateHealth(health.GetHealth() - 1);
-            StartCoroutine(Invincible(1));
+            StartCoroutine(Invincible(.5f));
         }
 
     }
@@ -111,9 +116,10 @@ public class PlayerMovement : MonoBehaviour
             dashing = false;
             anim.SetBool("IsDashing 0", false);
         }
+        yield return new WaitForSeconds(3);
     }
 
-    IEnumerator Invincible(int time)
+    IEnumerator Invincible(float time)
     {
         canBeHit = false;
         yield return new WaitForSeconds(time);
@@ -122,22 +128,24 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Punch(bool direction)
     {
-    if (direction == true) {
-        punching = true;
-        anim.SetBool("IsPunch", true);
-        yield return new WaitForSeconds(1f);
-        yield return new WaitForSeconds(1f); // cooldown on the dash
-        punching = false;
-        anim.SetBool("IsPunch", false);
-    } else {
-        punching = true;
-        anim.SetBool("IsPunch 0", true);
-        yield return new WaitForSeconds(1f);
-        yield return new WaitForSeconds(1f); // cooldown on the dash
-        punching = false;
-        anim.SetBool("IsPunch 0", false);
+        canBeHit = false;
+        if (direction == true) {
+            punching = true;
+            anim.SetBool("IsPunch", true);
+            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1f); // cooldown on the dash
+            punching = false;
+            anim.SetBool("IsPunch", false);
+        } else {
+            punching = true;
+            anim.SetBool("IsPunch 0", true);
+            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1f); // cooldown on the dash
+            punching = false;
+            anim.SetBool("IsPunch 0", false);
+        }
+        canBeHit = true;
     }
-}
-    
+
 }
 

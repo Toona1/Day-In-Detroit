@@ -76,7 +76,7 @@ public class Lives : MonoBehaviour
     // Initializes health of player
     void Start()
     {
-        SetHealth(6);
+        SetHealth(3);
         LivesSetup(GetHealth());
 
     }

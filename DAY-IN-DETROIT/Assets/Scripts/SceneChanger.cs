@@ -8,7 +8,7 @@ public class Scenes : MonoBehaviour
     // Runs when "play" button pressed
     public void PlayGame()
     {
-        SceneManager.LoadScene("GamePlay1");
+        SceneManager.LoadScene("GamePlay1 (1)");
     }
 
     // Runs when "restart" or "play again" buttons prssed

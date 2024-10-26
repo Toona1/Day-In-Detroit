@@ -37,22 +37,22 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             pos.x -= (speed + herbMeter) * Time.deltaTime;
-            anim.SetFloat("Speed", 0.1f);
+            anim.SetFloat("Speed", 0.06f);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             pos.x += (speed + herbMeter) * Time.deltaTime;
-            anim.SetFloat("Speed", 0.1f);
+            anim.SetFloat("Speed", 0.06f);
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
             pos.y += (speed + herbMeter) * Time.deltaTime;
-            anim.SetFloat("Speed", -0.1f);
+            anim.SetFloat("Speed", -0.06f);
         }
         if (Input.GetKey(KeyCode.DownArrow))  
         {
             pos.y -= (speed + herbMeter) * Time.deltaTime;
-            anim.SetFloat("Speed", 0.1f);
+            anim.SetFloat("Speed", 0.06f);
         }
         
         if (Input.GetKeyDown(KeyCode.S) & dashing == false) // have to use keydown here because getkey runs every single frame
@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log("enemy touched");
             Debug.Log(health.GetHealth());
             health.UpdateHealth(health.GetHealth() - 1);
-            StartCoroutine(Invincible(.5f));
+            StartCoroutine(Invincible(.25f));
         }
 
     }

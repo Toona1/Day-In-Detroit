@@ -11,8 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed; // no value assigned as you can do that in the unity object
     public float herbMeter = 0;
     public float maxHerb = 4;
-    bool dashing = false;
-    bool punching = false;
+    public bool dashing = false;
+    public bool punching = false;
 
     bool canBeHit = true;
     Lives health;
